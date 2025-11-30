@@ -1,0 +1,36 @@
+spring:
+  hateoas:
+    use-hal-as-default-json-media-type: false
+  application:
+    name: rest-template-incident
+  http:
+    client:
+      factory: jdk
+      connect-timeout: 30s
+      read-timeout: 30s
+  data:
+    rest:
+      default-media-type: application/json
+
+management:
+  endpoint:
+    configprops:
+      show-values: always
+    env:
+      show-values: always
+  endpoints:
+    web:
+      exposure:
+        exclude: "*"
+    jmx:
+      exposure:
+        include: "*"
+  health:
+    readinessstate:
+      enabled: true
+#logging:
+#  level:
+#    root: off
+#    'org.springframework.beans.factory.support.DefaultListableBeanFactory': debug
+#  pattern:
+#    console: "%-5level %logger{36} -- %msg%n"
