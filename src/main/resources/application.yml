@@ -8,9 +8,10 @@ spring:
       factory: jdk
       connect-timeout: 30s
       read-timeout: 30s
-  data:
-    rest:
-      default-media-type: application/json
+
+# uncommenting below will preserve the behavior where UserResource is threaded as POJO instead of HATEAOS RepresentationModel (links instead of _links)
+#  autoconfigure:
+#    exclude: org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration
 
 management:
   endpoint:
